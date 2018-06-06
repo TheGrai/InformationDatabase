@@ -31,6 +31,17 @@ def file_io(ltype="lines"):
     print("File IO Done")
 
 
+def save():
+    print("Saving File")
+    print(".")
+    print("..")
+    print("...")
+    with open("Players.txt", 'w') as f:
+        for item in members:
+            f.write(item.name + " " + item.last_name + " " + item.age + "\n")
+    print("Saved")
+
+
 def display():
     print("Members:")
     for item in members:
@@ -60,9 +71,7 @@ init()
 while 0 == 0:
     usr_input = input("CMD: ")
     if usr_input.upper() == "QUIT" or usr_input.upper() == "Q":
-        with open("Players.txt", 'w') as f:
-            for item in members:
-                f.write(item.name + " " + item.last_name + " " + item.age + "\n")
+        save()
         while 0 == 0:
             usr_input = input("Are you sure you want to quit? {Y} {N} : ")
             if usr_input.upper() == "Y":
@@ -72,14 +81,7 @@ while 0 == 0:
             else:
                 print("Error!")
     elif usr_input.upper() == "SAVE" or usr_input.upper() == "S":
-        print("Saving File")
-        print(".")
-        print("..")
-        print("...")
-        with open("Players.txt", 'w') as f:
-            for item in members:
-                f.write(item.name + " " + item.last_name + " " + item.age + "\n")
-        print("Saved")
+        save()
 
     elif usr_input.upper() == "ADD" or usr_input.upper() == "A":
         print("Add")
@@ -172,6 +174,21 @@ while 0 == 0:
 
     elif usr_input.upper() == "ORGANIZE" or usr_input.upper() == "O":
         print("Organize")
+        while 0 == 0:
+            usr_input = input("What would you like to sort? {First Name} | {Last Name} | {Age} : ")
+            if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
+                break
+            elif usr_input.upper() == "FIRST NAME" or usr_input.upper() == "F":
+                members.sort(key=lambda x: x.name, reverse=False)
+                break
+            elif usr_input.upper() == "LAST NAME" or usr_input.upper() == "L":
+                members.sort(key=lambda x: x.last_name, reverse=False)
+                break
+            elif usr_input.upper() == "AGE" or usr_input.upper() == "A":
+                members.sort(key=lambda x: x.age, reverse=False)
+                break
+            else:
+                print("Error!")
     else:
         print("Input Error!")
         print("Options are: | Quit | Add | Remove | Display | Search | Organize |")
