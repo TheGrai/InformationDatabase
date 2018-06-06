@@ -57,6 +57,20 @@ while 0 == 0:
         quit()
     elif usr_input.upper() == "ADD" or usr_input.upper() == "A":
         print("Add")
+        while 0 == 0:
+            usr_input = input("Add {First Name} | {Last Name} | {Age} : ")
+            if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
+                break
+            acc = usr_input.split()
+            if len(acc) == 3:
+                new_acc = Player(acc[0], acc[1], acc[2])
+                members.append(new_acc)
+                print("Added: ")
+                name_index = members.index(new_acc)
+                print(str(name_index + 1) + " | " + new_acc.name + " | " + new_acc.last_name + " | " + new_acc.age)
+            else:
+                print("Error!")
+
     elif usr_input.upper() == "REMOVE" or usr_input.upper() == "R":
         number_input = input("Delete Entry #")
         persons = file_io()
