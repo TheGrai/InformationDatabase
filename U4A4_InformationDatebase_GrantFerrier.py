@@ -70,34 +70,67 @@ while 0 == 0:
     elif usr_input.upper() == "SEARCH" or usr_input.upper() == "S":
         while 0 == 0:
             usr_input = input("Search for First Name, Last Name, or Age: ")
+            if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
+                break
             if usr_input.upper() == "FIRST NAME" or usr_input.upper() == "F":
                 print("First Name")
-                found = []
-                for item in members:
-                    if item.name == "Grant":
-                        member_index = members.index(item)
-                        print(str(member_index + 1) + " " + item.name + " " + item.last_name + " " + item.age)
-                break
+                while 0 == 0:
+                    usr_input = input("Enter the First Name you wish to search for: ")
+                    if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
+                        break
+                    found = []
+                    first_names = []
+                    for item in members:
+                        first_names.append(item.name)
+                    if usr_input in first_names:
+                        for item in members:
+                            if item.name == usr_input:
+                                name_index = members.index(item)
+                                print(str(
+                                    name_index + 1) + " | " + item.name + " | " + item.last_name + " | " + item.age)
+                        break
+                    else:
+                        print("That Name was Not Found!")
             elif usr_input.upper() == "LAST NAME" or usr_input.upper() == "L":
                 print("Last Name")
-                found = []
-                for item in members:
-                    if item.last_name == "Ferrier":
-                        member_index = members.index(item)
-                        print(str(member_index + 1) + " " + item.name + " " + item.last_name + " " + item.age)
-                break
+                while 0 == 0:
+                    usr_input = input("Enter the Last Name you wish to search for: ")
+                    if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
+                        break
+                    found = []
+                    last_names = []
+                    for item in members:
+                        last_names.append(item.last_name)
+                    if usr_input in last_names:
+                        for item in members:
+                            if item.last_name == usr_input:
+                                lastname_index = members.index(item)
+                                print(str(
+                                    lastname_index + 1) + " | " + item.name + " | " + item.last_name + " | " + item.age)
+                        break
+                    else:
+                        print("That Name was Not Found!")
             elif usr_input.upper() == "AGE" or usr_input.upper() == "A":
                 print("Age")
-                found = []
-                for item in members:
-                    if item.age == "19":
-                        member_index = members.index(item)
-                        print(str(member_index + 1) + " " + item.name + " " + item.last_name + " " + item.age)
-                break
+                while 0 == 0:
+                    usr_input = input("Enter the Age you wish to search for: ")
+                    if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
+                        break
+                    found = []
+                    ages = []
+                    for item in members:
+                        ages.append(item.age)
+                    if usr_input in ages:
+                        for item in members:
+                            if item.age == usr_input:
+                                member_index = members.index(item)
+                                print(str(
+                                    member_index + 1) + " | " + item.name + " | " + item.last_name + " | " + item.age)
+                        break
+                    else:
+                        print("That Age was Not Found!")
             else:
                 print("Error!")
-
-        print("Search")
 
 
     elif usr_input.upper() == "ORGANIZE" or usr_input.upper() == "O":
