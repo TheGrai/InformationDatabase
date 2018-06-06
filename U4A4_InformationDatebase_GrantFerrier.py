@@ -31,6 +31,13 @@ def file_io(ltype="lines"):
     print("File IO Done")
 
 
+def display():
+    print("Members:")
+    for item in members:
+        name_index = members.index(item)
+        print(str(name_index + 1) + " | " + item.name + " | " + item.last_name + " | " + item.age)
+
+
 # init function
 def init():
     print("Initialized")
@@ -53,8 +60,27 @@ init()
 while 0 == 0:
     usr_input = input("CMD: ")
     if usr_input.upper() == "QUIT" or usr_input.upper() == "Q":
-        print("Quiting")
-        quit()
+        with open("Players.txt", 'w') as f:
+            for item in members:
+                f.write(item.name + " " + item.last_name + " " + item.age + "\n")
+        while 0 == 0:
+            usr_input = input("Are you sure you want to quit? {Y} {N} : ")
+            if usr_input.upper() == "Y":
+                quit()
+            elif usr_input.upper() == "N":
+                break
+            else:
+                print("Error!")
+    elif usr_input.upper() == "SAVE" or usr_input.upper() == "S":
+        print("Saving File")
+        print(".")
+        print("..")
+        print("...")
+        with open("Players.txt", 'w') as f:
+            for item in members:
+                f.write(item.name + " " + item.last_name + " " + item.age + "\n")
+        print("Saved")
+
     elif usr_input.upper() == "ADD" or usr_input.upper() == "A":
         print("Add")
         while 0 == 0:
@@ -73,16 +99,14 @@ while 0 == 0:
 
     elif usr_input.upper() == "REMOVE" or usr_input.upper() == "R":
         number_input = input("Delete Entry #")
-        persons = file_io()
-        print(persons)
-        del persons[int(number_input)]
-        print(persons)
+        # for item in members:
+        #     item_index = members.index(item)
+        del members[int(number_input) - 1]
+        print("Here is the new list with updated indexes:")
+        display()
 
     elif usr_input.upper() == "DISPLAY" or usr_input.upper() == "D":
-        print("Members:")
-        for item in members:
-            name_index = members.index(item)
-            print(str(name_index + 1) + " | " + item.name + " | " + item.last_name + " | " + item.age)
+        display()
 
     elif usr_input.upper() == "SEARCH" or usr_input.upper() == "S":
         while 0 == 0:
