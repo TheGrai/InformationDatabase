@@ -33,15 +33,15 @@ def file_io(ltype="lines"):
 
 # init function
 def init():
-    print("INIT")
+    print("Initialized")
     f = file_io()
     for item in f:
         attribute = item.split()
-        print(attribute)
+        # print(attribute)
         acc = Player(attribute[0], attribute[1], attribute[2])
         members.append(acc)
-    for usr in members:
-        print(usr.name)
+    # for usr in members:
+    #     print(usr.name)
 
 
 # Declaring variables
@@ -65,7 +65,10 @@ while 0 == 0:
         print(persons)
 
     elif usr_input.upper() == "DISPLAY" or usr_input.upper() == "D":
-        print("Display")
+        print("Members:")
+        for item in members:
+            name_index = members.index(item)
+            print(str(name_index + 1) + " | " + item.name + " | " + item.last_name + " | " + item.age)
 
     elif usr_input.upper() == "SEARCH" or usr_input.upper() == "S":
         while 0 == 0:
@@ -73,7 +76,6 @@ while 0 == 0:
             if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
                 break
             if usr_input.upper() == "FIRST NAME" or usr_input.upper() == "F":
-                print("First Name")
                 while 0 == 0:
                     usr_input = input("Enter the First Name you wish to search for: ")
                     if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
@@ -92,7 +94,6 @@ while 0 == 0:
                     else:
                         print("That Name was Not Found!")
             elif usr_input.upper() == "LAST NAME" or usr_input.upper() == "L":
-                print("Last Name")
                 while 0 == 0:
                     usr_input = input("Enter the Last Name you wish to search for: ")
                     if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
@@ -111,7 +112,6 @@ while 0 == 0:
                     else:
                         print("That Name was Not Found!")
             elif usr_input.upper() == "AGE" or usr_input.upper() == "A":
-                print("Age")
                 while 0 == 0:
                     usr_input = input("Enter the Age you wish to search for: ")
                     if usr_input.upper() == "EXIT" or usr_input.upper() == "E":
@@ -131,7 +131,6 @@ while 0 == 0:
                         print("That Age was Not Found!")
             else:
                 print("Error!")
-
 
     elif usr_input.upper() == "ORGANIZE" or usr_input.upper() == "O":
         print("Organize")

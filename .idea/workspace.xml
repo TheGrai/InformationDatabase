@@ -18,8 +18,8 @@
           <file leaf-file-name="U4A4_InformationDatebase_GrantFerrier.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/U4A4_InformationDatebase_GrantFerrier.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="548">
-                  <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+                <state relative-caret-position="297">
+                  <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -181,7 +181,7 @@
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -224,8 +224,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/U4A4_InformationDatebase_GrantFerrier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+        <state relative-caret-position="297">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
         </state>
       </provider>
     </entry>
