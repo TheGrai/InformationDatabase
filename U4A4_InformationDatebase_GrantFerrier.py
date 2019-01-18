@@ -107,6 +107,8 @@ while 0 == 0:
                         # Displays the new user info.
                         print(str(
                             name_index + 1) + " | " + new_acc.name + " | " + new_acc.last_name + " | " + new_acc.age)
+                        members.sort(key=lambda x: x.name, reverse=False)
+                        display()
                     else:
                         print("Please enter an age above 0")
                 else:
